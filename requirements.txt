@@ -2,3 +2,4 @@ django==4.1.13
 Pillow
 mysqlclient
 django-admin-tailwind
+django-paypal
