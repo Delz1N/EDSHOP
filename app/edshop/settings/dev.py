@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,7 +35,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # mis apps
     'web',
+    'crispy_forms',
     'django_admin_tailwind',
+    'paypal.standard.ipn',
     # Apps predeterminadas
     'django.contrib.admin',
     'django.contrib.auth',
@@ -133,3 +136,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Agregando los archivos media - me
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+
+PAYPAL_TEST = True
+PAYPAL_USER_EMAIL = config('PAYPAL_USER_EMAIL')
+
+EMAIL_HOST='sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER='38bfc5402955c8'
+EMAIL_HOST_PASSWORD='b5d7e9c68e044b'
+EMAIL_PORT='2525'
+
+
+ADMIN_USER_EMAIL = config('ADMIN_USER_EMAIL')

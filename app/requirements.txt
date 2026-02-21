@@ -1,0 +1,7 @@
+django==4.1.13
+Pillow
+django-admin-tailwind
+django-paypal
+django-crispy-forms
+python-decouple
+gunicorn
